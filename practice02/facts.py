@@ -14,6 +14,8 @@ people = [
                'Different Parts of Your Tongue Detect Different Tastes.'
                ]
             ),
+    Person(github_login='gt22', first_name='Igor', last_name='Engel',
+           facts=['Питонячу где хочу', 'Люблю svn', 'MLкаю в свободное время (которого нет)']),
 ]
 
 answers = {}
