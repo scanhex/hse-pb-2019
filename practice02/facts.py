@@ -2,18 +2,16 @@
 import collections
 import sys
 
-Person = collections.namedtuple(
-    'Person', ['github_login', 'first_name', 'last_name', 'facts'])
+
+Person = collections.namedtuple('Person', ['github_login', 'first_name', 'last_name', 'facts'])
 people = [
-    Person(
-        github_login='scanhex',
-        first_name='Alexander',
-        last_name='Morozov',
-        facts=[
-            'Nearly 30,000 rubber ducks were lost a sea in 1992 and are still being discovered today',
-            'The world\'s largest pyramid isn\'t in Egypt.',
-            'Different Parts of Your Tongue Detect Different Tastes.'
-        ]),
+    Person(github_login='scanhex', first_name='Alexander', last_name='Morozov',
+           facts=[
+               'Nearly 30,000 rubber ducks were lost a sea in 1992 and are still being discovered today',
+               'The world\'s largest pyramid isn\'t in Egypt.',
+               'Different Parts of Your Tongue Detect Different Tastes.'
+               ]
+            ),
 ]
 
 answers = {}
@@ -37,9 +35,7 @@ def list_facts(github_login):
     else:
         person = found[0]
         print(format_person_info(person), 'Facts:')
-        print(
-            *[f'{i + 1}. {person.facts[i]}' for i in range(len(person.facts))],
-            sep='\n')
+        print(*[f'{i + 1}. {person.facts[i]}' for i in range(len(person.facts))], sep='\n')
 
 
 def check_answer(github_login, answer):
@@ -81,5 +77,5 @@ if __name__ == '__main__':
         print('> ', end='', flush=True)
         try:
             run_cmd(sys.stdin.readline().strip())
-        except Exception:  # This is a VERY bad style.
+        except Exception: # This is a VERY bad style. 
             continue
